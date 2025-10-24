@@ -2,7 +2,7 @@
 
 Forecast verifier is Python package for verifying specified causal relationships between forecasts/predictions and covariates given trained models. The package goes one step beyond simple model explainability tools to extract learnt causal relationships, and verify them against existing domain knowledge.
 
-Documentation can be found at: [Homepage] https://maichi-bui.github.io/forecast-verifier
+Documentation can be found at: [Homepage](https://maichi-bui.github.io/forecast-verifier) 
 
 ## Installation
 Install the forecast_verifier package using `pip` command:
