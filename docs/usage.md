@@ -36,7 +36,7 @@ my_model = CustomRegressor(model)  # model is a pre-trained regression model
 
 # Load your dataset
 original_data = pd.read_csv('your_dataset.csv')
-pertubation_data = pd.read_csv('your_pertubation_dataset.csv')
+perturbation_data = pd.read_csv('your_perturbation_dataset.csv')
 
 verifier = Verifier(my_model, 
                     original_dataset, 
@@ -82,7 +82,7 @@ my_model = CustomForecaster(model_path='path_to_your_model')
 
 # Load your dataset
 original_data = pd.read_csv('your_dataset.csv')
-pertubation_data = pd.read_csv('your_pertubation_dataset.csv')  
+perturbation_data = pd.read_csv('your_perturbation_dataset.csv')  
 
 verifier = Verifier(my_model, 
                     original_dataset, 

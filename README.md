@@ -19,7 +19,7 @@ from forecast_verifier.dataset import PerturbationDataset
 from forecast_verifier.verifier import Verifier
 from forecast_verifier.graph import PerturbationDirection, EffectDirection
 
-# Create your model inheriting from Forecaster or Regressor that implements the forecast/predict method
+# Create your model inheriting from Forecaster/Regressor that implements the forecast/predict method
 class CustomForecaster(Forecaster):
     def __init__(self):
         super().__init__()
@@ -32,9 +32,9 @@ my_model = CustomForecaster()
 
 # Load your dataset
 original_data = pd.read_csv('your_dataset.csv')
-pertubation_data = pd.read_csv('your_pertubation_dataset.csv')
+perturbation_data = pd.read_csv('your_perturbation_dataset.csv')
 
-# if pertubation_data are not available, create a PerturbationDataset based on original_data
+# if perturbation_data are not available, create a PerturbationDataset based on original_data
 perturbation_data = PerturbationDataset(original_dataset=original_data, 
                                         covariates=['covariate1'], 
                                         perturbation_direction=PerturbationDirection.increasing)
@@ -45,10 +45,10 @@ perturbation_data = perturbation_data.additive_perturb(10, bound=(-10, 40))
 
 # Define and verify causal relationships
 ## when covariate1 increases, the forecast should decrease, i.e., negative effect
-## perturbation direction is increasing, meaning that we increase covariate1 from original_data to pertubation_data
+## perturbation direction is increasing, meaning that we increase covariate1 from original_data to perturbation_data
 verifier = Verifier(model=my_model, 
                     original_dataset=original_data, 
-                    perturbed_dataset=pertubation_data, 
+                    perturbed_dataset=perturbation_data, 
                     covariates=['covariate1'],                     
                     effect_direction=EffectDirection.negative,
                     perturbation_direction=PerturbationDirection.increasing)
